@@ -78,14 +78,16 @@ export default function App() {
         <View className="flex flex-row items-center justify-between mt-7 px-3">
           <TouchableOpacity onPress={toggleColorScheme}>
             <Text className="text-gray-400 dark:text-gray-100">
-              {colorScheme === "dark" ? <Ionicons name="sunny" size={28}/> : <Ionicons name="moon" size={28}/>}
+              {
+                colorScheme === "dark" ? <Ionicons name="sunny" size={28}/> : <Ionicons name="moon" size={28}/>
+              }
             </Text>
           </TouchableOpacity>
-          <TouchableOpacity>
+          {/* <TouchableOpacity>
             <Text className="text-gray-400 dark:text-gray-100">
               <MaterialCommunityIcons name="history" size={28}/>
             </Text>
-          </TouchableOpacity>
+          </TouchableOpacity> */}
         </View>
       <View className="flex-1 p-4 justify-end items-end space-y-2">
         <View className="flex flex-row items-center space-x-1">
@@ -112,6 +114,13 @@ export default function App() {
         />
       </View>
       <StatusBar style="auto" />
+      <BannerAd
+        unitId={TestIds.BANNER}
+        size={BannerAdSize.FULL_BANNER}
+        requestOptions={{
+          requestNonPersonalizedAdsOnly: true,
+        }}
+      />
     </View>
   );
 }
